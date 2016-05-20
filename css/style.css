@@ -149,13 +149,16 @@ a{
 
 }
 .hot-travel ul li{padding: 0.5rem 0;border: solid #c9c9c9;border-width: 1px 0px 0px 0px;overflow: hidden}
-.hot-travel ul li .img-div{width: 6rem;height: 6rem;float: left;}
+.hot-travel ul li .img-div{ display:none;width: 6rem;height: 6rem;float: left;}
 .hot-travel ul li img{
   width: 100%;
   height: 100%;
 }
-.hot-travel ul li h1{/* float: left; */margin: 0px;margin-left: 7rem;padding: 0px;line-height: 1.5rem;font-size: 1.2rem;}
-.hot-travel ul li p{/* float: left; */margin-left: 7rem;line-height: 1.5rem;color: #000;height: 3rem;overflow: hidden;margin-bottom: 0px;}
+.hot-travel ul li a{
+  display: inherit;
+}
+.hot-travel ul li h1{/* float: left; */margin: 0px;/*margin-left: 7rem;*/padding: 0px;line-height: 1.5rem;font-size: 1.2rem;}
+.hot-travel ul li p{/* float: left; *//*margin-left: 7rem;*/line-height: 1.5rem;color: #000;height: 3rem;overflow: hidden;margin-bottom: 0px;}
 .search-end{
   margin: 0px 10px;
   height: 2rem;
@@ -182,7 +185,12 @@ a{
   float: right;
   width: 12%;
   border-right: none;
-  font-size: 0.8rem;
+  font-size: 0.7rem;
+  position: absolute;
+  right: 1rem;
+  top: 0rem;
+  height: 2rem;
+  line-height: 2rem;
 }
 .info-col .table{
 
