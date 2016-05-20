@@ -341,3 +341,17 @@ a{
 .amap-sug-result{
   border: 0px;
 }
+.footer{
+  margin: 2rem 0rem 2rem;
+  padding: 0 2rem;
+  line-height: 1.5rem;
+  font-size: 0.8rem;
+  text-align: center;
+}
+.footerli{
+  list-style-type: disc;
+  margin: 1rem 1rem 3rem;
+  line-height: 1.5rem;
+  font-size: 0.7rem;
+  padding-left: 1rem;
+}
