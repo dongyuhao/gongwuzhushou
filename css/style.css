@@ -1,0 +1,343 @@
+/* Empty. Add your own CSS if you like */
+body{
+  font: 400 .7rem/1.5 Arial,"Lucida Grande",Verdana,"Microsoft YaHei",hei!important;
+}
+a{
+  text-decoration: none;
+  color: inherit;
+}
+.top{
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  background: #e6f1f7;
+  padding: 0.4rem 0.5rem 1.4rem 0.5rem;
+  overflow: hidden;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  background: url("../img/top-bg.jpg") top center no-repeat;
+  background-size: cover;
+}
+.top h1{
+  line-height: 3;
+  font-size: 1.3rem;
+  color: #ffffff;
+  text-align: center;
+}
+.top-search{
+  margin: 0px 10px;
+  height: 2rem;
+  /* width: 100%; */
+  line-height: normal;
+  /* display: inline-block; */
+  padding: 0.5rem 1rem 0.5rem 1.4rem;
+  /* background-color: #FFF; */
+  border-radius: 1rem;
+  overflow: hidden;
+  position: relative;
+  border: 1px solid #fff;
+}
+.top-search a{
+  width: 20%;
+  text-align: center;
+  display: block;
+  float: left;
+  line-height: 1rem;
+  color: #fff;
+  height: 1rem;
+  text-decoration: none;
+  border-right: 1px solid #fff;
+}
+.top-search input{
+  width: 90%;
+  padding-top: 0px;
+  line-height: 1rem;
+  height: 1rem;
+  background: none;
+  color: #fff;
+  font-size: 100%;
+  padding-bottom: 0;
+  /* padding-left: 1rem; */
+  float: right;
+  font-size: 0.7rem;
+}
+.search-input{
+  width: 70%;
+  display: inline-block;
+  text-align: left;
+  color: #fff;
+  padding-left: 1rem;
+  line-height: 1rem;
+}
+.hot-local{
+  background: #fff;
+  /* margin-top: 10rem; */
+}
+.hot-local h1{
+  color: #666;
+  line-height: 1rem;
+  padding: 0.25rem 0.5rem 0.25rem 2rem;
+  display: block;
+  text-align: left;
+}
+.hot-local ul{
+  overflow: hidden;
+  padding: 1rem 2rem;
+}
+
+.hot-local ul li{
+  width: 22%;
+  float: left;
+  height: 2rem;
+  line-height: 2rem;
+  padding: 0 0.25rem;
+  box-sizing: border-box;
+  text-align: center;
+  margin: 0.5rem 3% 0.5rem 0;
+  position: relative;
+  white-space: nowrap;
+  overflow: hidden;
+  border-radius: 1rem;
+  text-overflow: ellipsis;
+  border: 1px solid #c9c9c9;
+  letter-spacing: 0.2rem;
+}
+.hot-local ul li a{
+  display: block;
+  font-size: 1rem;
+}
+.info-col{
+  background: #fff;
+  margin: 0.4rem 0.5rem;
+}
+.info-col h1{
+  color: #000;
+  line-height: 2.4rem;
+  padding: 0.25rem 0.25rem 0.25rem 3%;
+  display: block;
+  text-align: left;
+  margin-bottom: 0;
+  font-size: 1.4rem;
+}
+.info-col ul{
+  overflow: hidden;
+  padding: 0.2rem 3%;
+}
+.hot-local-img ul li{
+  width: 22%;
+  float: left;
+  height: 6rem;
+  line-height: 2rem;
+  padding: 0 0.25rem;
+  box-sizing: border-box;
+  text-align: center;
+  margin: 0.5rem 3% 1rem 0;
+  position: relative;
+  white-space: nowrap;
+  overflow: hidden;
+  border-radius: 1rem;
+  text-overflow: ellipsis;
+}
+.hot-local-img ul li a{
+  display: inherit;
+}
+.hot-local-img ul li .img-div{width: 100%;height: 4rem;overflow: hidden;border-radius: 50% 50%;margin: 0 auto;}
+.hot-local-img ul li img{width: 100%;/* height: 4rem; */}
+.hot-local-img ul li span{display: block;height: 2rem;line-height: 2rem;letter-spacing: 0.2rem;text-align: center;font-size: 1rem;}
+.hot-travel ul{
+
+}
+.hot-travel ul li{padding: 0.5rem 0;border: solid #c9c9c9;border-width: 1px 0px 0px 0px;overflow: hidden}
+.hot-travel ul li .img-div{width: 6rem;height: 6rem;float: left;}
+.hot-travel ul li img{
+  width: 100%;
+  height: 100%;
+}
+.hot-travel ul li h1{/* float: left; */margin: 0px;margin-left: 7rem;padding: 0px;line-height: 1.5rem;font-size: 1.2rem;}
+.hot-travel ul li p{/* float: left; */margin-left: 7rem;line-height: 1.5rem;color: #000;height: 3rem;overflow: hidden;margin-bottom: 0px;}
+.search-end{
+  margin: 0px 10px;
+  height: 2rem;
+  line-height: normal;
+  padding: 0.5rem 1rem 0.5rem 1.4rem;
+  border-radius: 1rem;
+  overflow: hidden;
+  text-align: center;
+  color: #ffffff;
+  font-size: 1rem;
+}
+.search-end .ion-ios-search:before{
+  float: left;
+}
+.search-end .top-search{
+  padding: 0.5rem 1rem 0.5rem 1.4rem;
+}
+.search-end .top-search input{
+  float: left;
+  width: 70%;
+  padding-left: 2rem;
+}
+.search-end .top-search a{
+  float: right;
+  width: 12%;
+  border-right: none;
+  font-size: 0.8rem;
+}
+.info-col .table{
+
+}
+.info-col .table table{
+  width: 100%;
+  table-layout: fixed;
+}
+
+.info-col .table table tr{
+
+}
+
+.info-col .table table tr td{padding: 0.4rem 0.2rem;}
+.info-col .table table tr th{
+  text-align: center;
+  font-size: 0.7rem;
+}
+.t-c{
+  text-align: center;
+}
+.detail .info-col{
+  padding: 0 0.2rem 0.5rem;
+}
+.a-z{
+
+}
+.a-z ul{
+
+}
+.a-z ul li{
+  width: 16.66%;
+  border: 1px solid #e1e1e1;
+  font-size: 1rem;
+  text-align: center;
+  float: left;
+}
+.ion-ios-arrow-down{
+  float: right;
+}
+.chat-tab{
+  overflow: hidden;
+}
+.chat-tab .chat-tab-btn{
+  width: 33%;
+  height: 4rem;
+  float: left;
+  background-size: contain;
+  position: relative;
+  margin: 1rem 0 2rem;
+}
+.chat-tab .chat-tab-btn p{
+  color: #000000;
+  text-align: center;
+  line-height: 1rem;
+  position: absolute;
+  width: 100%;
+  bottom: -1.5rem;
+  margin: 0;
+}
+.chat-tab .chat-tab-btn.active p{
+  color: #0e57fe;
+}
+.chat-tab .buji{
+  background: url("../img/buji.png") top center no-repeat;
+  background-size: contain;
+
+}
+.chat-tab .juji{
+  background: url("../img/juji.png") top center no-repeat;
+  background-size: contain;
+
+
+}
+.chat-tab .other{
+  background: url("../img/other.png") top center no-repeat;
+  background-size: contain;
+
+
+}
+
+.chat-tab .buji.active{
+  background: url("../img/buji-active.png") top center no-repeat;
+  background-size: contain;
+
+}
+.chat-tab .juji.active{
+  background: url("../img/juji-active.png") top center no-repeat;
+  background-size: contain;
+
+
+}
+.chat-tab .other.active{
+  background: url("../img/other-active.png") top center no-repeat;
+  background-size: contain;
+
+
+}
+.zhusu{
+  background: url("../img/zhusu.jpg") center center no-repeat;
+  background-size: cover;
+}
+.huoche{
+  background: url("../img/huoche.jpg") center center no-repeat;
+  background-size: cover;
+}
+.lunchuan{
+  background: url("../img/lunchuan.jpg") center center no-repeat;
+  background-size: cover;
+}
+.feiji{
+  background: url("../img/feiji.jpg") center center no-repeat;
+  background-size: cover;
+}
+.qitagongju{
+  background: url("../img/qitajiaotong.jpg") center center no-repeat;
+  background-size: cover;
+}
+.shineijiaotong{
+  background: url("../img/shineijiaotong.jpg") center center no-repeat;
+  background-size: cover;
+}
+.huoshi{
+  background: url("../img/huoshi.jpg") center center no-repeat;
+  background-size: cover;
+}
+.chats-info{
+  color: #ffffff!important;
+  margin: 0.4rem 0.5rem 1rem;
+  border-radius: 1rem;
+}
+
+.chats-info h1{
+  color: #ffffff!important;
+  font-size: 1.6rem;
+  line-height: 3rem;
+}
+.chats-info h1 span{
+  font-size: 1.4rem;
+}
+
+.chats-info .table {
+  padding: 0 2rem;
+
+}
+.chats-info .table table tr th,.chats-info .table table tr td{
+  font-size: 1rem;
+  vertical-align: middle;
+  padding: 1rem 0;
+}
+
+.chats-info p{
+  font-size: 0.9rem;
+  padding: 0px 2rem;
+}
+.amap-sug-result{
+  border: 0px;
+}

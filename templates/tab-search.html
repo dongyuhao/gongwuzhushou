@@ -1,0 +1,46 @@
+<ion-view>
+
+  <ion-content class="detail" style="background: #e4e4e4">
+    <div class="top">
+      <div class="search-end" style="height: 3rem">
+        <div class="top-search ion-ios-search" style="padding-right: 1rem">
+          <input type="text" name="" id="inputLocation2" class="inputLocation"  ng-model="inputLocation"  placeholder="请输入城市/区县全程"/>
+          <a ng-click="jump()">提交</a>
+        </div>
+
+
+      </div>
+    </div>
+    <div class="hot-local info-col">
+      <h1 class="title">热门城市</h1>
+      <ul>
+        <li><a href="#/tab/chats/北京">北京</a></li>
+        <li><a href="#/tab/chats/上海">上海</a></li>
+        <li><a href="#/tab/chats/广州">广州</a></li>
+        <li><a href="#/tab/chats/天津">天津</a></li>
+        <li><a href="#/tab/chats/三亚">三亚</a></li>
+        <li><a href="#/tab/chats/厦门">厦门</a></li>
+        <li><a href="#/tab/chats/沈阳">沈阳</a></li>
+        <li><a href="#/tab/chats/拉萨">拉萨</a></li>
+      </ul>
+    </div>
+  <!--  <div class="a-z info-col">
+      <h1 class="title">字母排序</h1>
+      <ul>
+        <li ng-repeat="elm in elms"><a ng-click="goToAnchor(elm)">{{elm}}</a></li>
+      </ul>
+    </div>-->
+
+
+    <div  class="hot-local info-col">
+      <h1 class="title">出差目的地</h1>
+
+      <ul>
+        <li ng-repeat="c in chats"><a href="#/tab/chats/{{c.province}}">{{c.short}}</a></li>
+      </ul>
+    </div>
+
+
+
+  </ion-content>
+</ion-view>

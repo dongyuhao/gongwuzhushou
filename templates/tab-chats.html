@@ -1,0 +1,231 @@
+<ion-view>
+
+  <ion-content class="detail" style="background: #e4e4e4">
+    <div class="top">
+      <h1>中央和国家机关人员差旅费查询</h1>
+      <div class="search-end">
+        <a href="#/tab/search" style="display: block" class="ion-ios-location-outline">
+          {{searchdetail}}&nbsp;∨
+        </a>
+      </div>
+    </div>
+<!--    <ul>
+      <li ng-repeat="b in cityinfo">{{b.name}}</li>
+    </ul>-->
+    <div class="chat-tab" ng-init="activeTab = 1">
+      <div class="chat-tab-btn buji" ng-class="{active: activeTab == 1}" ng-click="activeTab = 1">
+        <p>部级及相当人员</p>
+      </div>
+      <div class="chat-tab-btn juji" ng-class="{active: activeTab == 2}" ng-click="activeTab = 2">
+        <p>局级及相当人员</p>
+      </div>
+      <div class="chat-tab-btn other" ng-class="{active: activeTab == 3}" ng-click="activeTab = 3">
+        <p>其他人员</p>
+      </div>
+    </div>
+    <!--部级-->
+    <div class="tab-show" ng-show="activeTab == 1">
+      <div class="info-col chats-info zhusu">
+      <h1 class="title">住宿补助（人/天)</h1>
+      <div class="table t-c" >
+        <table>
+          <tr ng-repeat="b in cityinfo">
+            <td>{{b.name}}</td>
+            <td>{{b.months}}</td>
+            <td>{{b.buji}}</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+      <!--火车-->
+      <div class="info-col chats-info huoche">
+        <h1 class="title">火车 <span> (含高铁动车 全列软席列车）</span></h1>
+        <p>火车软席(软座 软卧）高铁/动车商务座 全列软席列车一等软座</p>
+      </div>
+      <!--轮船-->
+      <div class="info-col chats-info lunchuan">
+        <h1 class="title">轮船 <span>(不含旅
+          游船）</span></h1>
+        <p>一等舱</p>
+      </div>
+      <!--飞机-->
+      <div class="info-col chats-info feiji">
+        <h1 class="title">飞机</h1>
+        <p>头等舱</p>
+      </div>
+    </div>
+    <!--局级-->
+    <div class="tab-show" ng-show="activeTab == 2">
+      <div class="info-col chats-info zhusu">
+      <h1 class="title">住宿补助（人/天)</h1>
+      <div class="table t-c" >
+        <table>
+          <tr ng-repeat="b in cityinfo">
+            <th>{{b.name}}</th>
+            <th>{{b.months}}</th>
+            <th>{{b.sijuji}}</th>
+          </tr>
+        </table>
+      </div>
+    </div>
+      <!--火车-->
+      <div class="info-col chats-info huoche">
+        <h1 class="title">火车 <span>(含高铁动车 全列软席列车）</span></h1>
+        <p>火车软席(软座 软卧）高铁/动车商务座 全列软席列车一等软座</p>
+      </div>
+      <!--轮船-->
+      <div class="info-col chats-info lunchuan">
+        <h1 class="title">轮船 <span>(不含旅
+          游船）</span></h1>
+        <p>二等舱</p>
+      </div>
+      <!--飞机-->
+      <div class="info-col chats-info feiji">
+        <h1 class="title">飞机</h1>
+        <p>经济舱</p>
+      </div>
+    </div>
+    <!--其他-->
+    <div class="tab-show" ng-show="activeTab == 3">
+      <div class="info-col chats-info zhusu">
+      <h1 class="title">住宿补助（人/天)</h1>
+      <div class="table t-c" >
+        <table>
+          <tr ng-repeat="b in cityinfo">
+            <th>{{b.name}}</th>
+            <th>{{b.months}}</th>
+            <th>{{b.buji}}</th>
+          </tr>
+        </table>
+      </div>
+    </div>
+      <!--火车-->
+      <div class="info-col chats-info huoche">
+        <h1 class="title">火车 <span>(含高铁动车 全列软席列车）</span></h1>
+        <p>火车硬席(硬座
+          硬卧）高铁/动
+          车二等座 全列
+          软席列车二等
+          软座</p>
+      </div>
+      <!--轮船-->
+      <div class="info-col chats-info lunchuan">
+        <h1 class="title">轮船 <span>(不含旅
+          游船）</span></h1>
+        <p>三等舱</p>
+      </div>
+      <!--飞机-->
+      <div class="info-col chats-info feiji">
+        <h1 class="title">飞机</h1>
+        <p>经济舱</p>
+      </div>
+    </div>
+    <!--其他交通工具-->
+    <div class="info-col chats-info qitagongju">
+      <h1 class="title">其他交通工具 <span>（不包括出租小汽车）</span></h1>
+      <p>凭据报销</p>
+      <p>* 部级及相当职务人员出差，因工作需要，随行一人可乘坐同等级交通
+        工具</p>
+      <p>* 乘坐飞机的，民航发展基金，燃油附加费可以凭据报销。</p>
+      <p>* 乘坐飞机，火车，轮船等交通工具的，每人可购买交通意外保险一份。
+        所在单位统一购买交通意外保险的，不再重复购买。</p>
+    </div>
+    <!--市内交通费-->
+    <div class="info-col chats-info shineijiaotong">
+      <h1 class="title">市内交通费（人/天）</h1>
+      <p>* 按出差自然（日历）天数计算，每人每天80元包干使用。</p>
+      <p>* 出差人员由接待单位或其他单位提供交通工具的，应向接待单位或其
+        他单位缴纳相关费用。</p>
+
+    </div>
+    <!--伙食补助-->
+    <div class="info-col chats-info huoshi">
+      <h1 class="title">伙食补助费（人/天）</h1>
+      <p>* 按出差自然（日历）天数计算，按规定包干使用。</p>
+      <p>* 出差人员应当自行用餐。凡由接待单位统一安排用餐的，应当向接待
+        单位缴纳伙食费。</p>
+      <p>* 通常情况下：西藏自治区，青海省，新疆省伙食费120元，其他
+        省市一律100元。（该项内容仅供参考，具体以给地财政局标准为准。）</p>
+
+    </div>
+
+ <!--   <div class="info-col">
+      <h1 class="title">城市间交通工具</h1>
+      <div class="table">
+        <table>
+          <tr>
+            <th>交通工具</th>
+            <th>部级及相当人员</th>
+            <th>局级及相当人员</th>
+            <th>其他人员</th>
+          </tr>
+          <tr>
+            <td>火车(含高铁
+              动车 全列软
+              席列车）</td>
+            <td>火车软席(软座 软
+              卧）高铁/动车商
+              务座 全列软席列
+              车一等软座</td>
+            <td>火车软席(软座 软
+              卧）高铁/动车一
+              等座 全列软席列
+              车一等软座</td>
+            <td>火车硬席(硬座
+              硬卧）高铁/动
+              车二等座 全列
+              软席列车二等
+              软座</td>
+          </tr>
+          <tr>
+            <td>轮船(不含旅
+              游船）</td>
+            <td class="t-c">一等舱</td>
+            <td class="t-c">二等舱</td>
+            <td class="t-c">三等舱</td>
+          </tr>
+          <tr>
+            <td>飞机</td>
+            <td class="t-c">头等舱</td>
+            <td class="t-c">经济舱</td>
+            <td class="t-c">经济舱</td>
+          </tr>
+          <tr>
+            <td>其他交通工
+              具（不包括
+              出租小汽车
+              ）</td>
+            <td class="t-c">凭据报销</td>
+            <td class="t-c">凭据报销</td>
+            <td class="t-c">凭据报销</td>
+          </tr>
+        </table>
+      </div>
+      <p>* 部级及相当职务人员出差，因工作需要，随行一人可乘坐同等级交通
+        工具</p>
+      <p>* 乘坐飞机的，民航发展基金，燃油附加费可以凭据报销。</p>
+      <p>* 乘坐飞机，火车，轮船等交通工具的，每人可购买交通意外保险一份。
+        所在单位统一购买交通意外保险的，不再重复购买。</p>
+
+    </div>
+
+    <div class="info-col">
+      <h1 class="title">市内交通费（人/天）</h1>
+      <p>* 按出差自然（日历）天数计算，每人每天80元包干使用。</p>
+      <p>* 出差人员由接待单位或其他单位提供交通工具的，应向接待单位或其
+        他单位缴纳相关费用。</p>
+
+    </div>
+    <div class="info-col">
+      <h1 class="title">伙食补助费（人/天）</h1>
+      <p>* 按出差自然（日历）天数计算，按规定包干使用。</p>
+      <p>* 出差人员应当自行用餐。凡由接待单位统一安排用餐的，应当向接待
+        单位缴纳伙食费。</p>
+      <p>* 通常情况下：西藏自治区，青海省，新疆省伙食费120元，其他
+        省市一律100元。（该项内容仅供参考，具体以给地财政局标准为准。）</p>
+
+    </div>-->
+
+
+  </ion-content>
+</ion-view>
