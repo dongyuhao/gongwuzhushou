@@ -3,15 +3,23 @@
   <ion-content class="detail" style="background: #e4e4e4">
     <div class="top">
       <h1>中央和国家机关人员差旅费查询</h1>
+      <a class="back-btn ion-chevron-left" href="#/tab/dash"></a>
       <div class="search-end">
-        <a href="#/tab/search" style="display: block" class="ion-ios-location-outline">
-          {{searchdetail}}&nbsp;∨
+        <a href="#/tab/search" style="display: inline-block;width: 6rem;line-height: 2rem;" class="ion-ios-location-outline">
+          {{searchdetail}}&nbsp;&nbsp;&nbsp;&nbsp;∨
         </a>
       </div>
     </div>
 <!--    <ul>
       <li ng-repeat="b in cityinfo">{{b.name}}</li>
     </ul>-->
+    <div class="info-col  chats-info zhusu"  id="weatherdiv" >
+      <h1 class="title">{{weathercity}}-天气预报</h1>
+
+
+        <div id="weathertip" class="weathertip"></div>
+
+    </div>
     <div class="chat-tab" ng-init="activeTab = 1">
       <div class="chat-tab-btn buji" ng-class="{active: activeTab == 1}" ng-click="activeTab = 1">
         <p>部级及相当人员</p>
@@ -26,7 +34,7 @@
     <!--部级-->
     <div class="tab-show" ng-show="activeTab == 1">
       <div class="info-col chats-info zhusu">
-      <h1 class="title">住宿补助（人/天)</h1>
+      <h1 class="title">住宿补助（人/天）</h1>
       <div class="table t-c" >
         <table>
           <tr ng-repeat="b in cityinfo">
@@ -39,13 +47,12 @@
     </div>
       <!--火车-->
       <div class="info-col chats-info huoche">
-        <h1 class="title">火车 <span> (含高铁动车 全列软席列车）</span></h1>
-        <p>火车软席(软座 软卧）高铁/动车商务座 全列软席列车一等软座</p>
+        <h1 class="title">火车 <span> （含高铁动车 全列软席列车）</span></h1>
+        <p>火车软席（软座 软卧）高铁/动车商务座 全列软席列车一等软座</p>
       </div>
       <!--轮船-->
       <div class="info-col chats-info lunchuan">
-        <h1 class="title">轮船 <span>(不含旅
-          游船）</span></h1>
+        <h1 class="title">轮船 <span>（不含旅游船）</span></h1>
         <p>一等舱</p>
       </div>
       <!--飞机-->
@@ -57,7 +64,7 @@
     <!--局级-->
     <div class="tab-show" ng-show="activeTab == 2">
       <div class="info-col chats-info zhusu">
-      <h1 class="title">住宿补助（人/天)</h1>
+      <h1 class="title">住宿补助（人/天）</h1>
       <div class="table t-c" >
         <table>
           <tr ng-repeat="b in cityinfo">
@@ -70,13 +77,12 @@
     </div>
       <!--火车-->
       <div class="info-col chats-info huoche">
-        <h1 class="title">火车 <span>(含高铁动车 全列软席列车）</span></h1>
-        <p>火车软席(软座 软卧）高铁/动车商务座 全列软席列车一等软座</p>
+        <h1 class="title">火车 <span>（含高铁动车 全列软席列车）</span></h1>
+        <p>火车软席（软座 软卧）高铁/动车商务座 全列软席列车一等软座</p>
       </div>
       <!--轮船-->
       <div class="info-col chats-info lunchuan">
-        <h1 class="title">轮船 <span>(不含旅
-          游船）</span></h1>
+        <h1 class="title">轮船 <span>（不含旅游船）</span></h1>
         <p>二等舱</p>
       </div>
       <!--飞机-->
@@ -88,7 +94,7 @@
     <!--其他-->
     <div class="tab-show" ng-show="activeTab == 3">
       <div class="info-col chats-info zhusu">
-      <h1 class="title">住宿补助（人/天)</h1>
+      <h1 class="title">住宿补助（人/天）</h1>
       <div class="table t-c" >
         <table>
           <tr ng-repeat="b in cityinfo">
@@ -101,8 +107,8 @@
     </div>
       <!--火车-->
       <div class="info-col chats-info huoche">
-        <h1 class="title">火车 <span>(含高铁动车 全列软席列车）</span></h1>
-        <p>火车硬席(硬座
+        <h1 class="title">火车 <span>（含高铁动车 全列软席列车）</span></h1>
+        <p>火车硬席（硬座
           硬卧）高铁/动
           车二等座 全列
           软席列车二等
@@ -110,8 +116,7 @@
       </div>
       <!--轮船-->
       <div class="info-col chats-info lunchuan">
-        <h1 class="title">轮船 <span>(不含旅
-          游船）</span></h1>
+        <h1 class="title">轮船 <span>（不含旅游船）</span></h1>
         <p>三等舱</p>
       </div>
       <!--飞机-->
@@ -157,8 +162,8 @@
 
     <div class="footer">
       <p style="text-align: center"><img src="./img/er.bmp" alt=""/></p>
-      <p>若您在使用过程中遇到问题 <br/>请致电：01069001234</p>
-      <p>政务和公益机构域名注册管理中心版权所有</p>
+      <p>若您在使用过程中遇到问题 <br/>请致电：010-69001234</p>
+      <p>中央机构编制委员会办公室&nbsp;&nbsp;&nbsp;&nbsp;版权所有</p>
 
     </div>
 
@@ -173,25 +178,25 @@
             <th>其他人员</th>
           </tr>
           <tr>
-            <td>火车(含高铁
+            <td>火车（含高铁
               动车 全列软
               席列车）</td>
-            <td>火车软席(软座 软
+            <td>火车软席（软座 软
               卧）高铁/动车商
               务座 全列软席列
               车一等软座</td>
-            <td>火车软席(软座 软
+            <td>火车软席（软座 软
               卧）高铁/动车一
               等座 全列软席列
               车一等软座</td>
-            <td>火车硬席(硬座
+            <td>火车硬席（硬座
               硬卧）高铁/动
               车二等座 全列
               软席列车二等
               软座</td>
           </tr>
           <tr>
-            <td>轮船(不含旅
+            <td>轮船（不含旅
               游船）</td>
             <td class="t-c">一等舱</td>
             <td class="t-c">二等舱</td>

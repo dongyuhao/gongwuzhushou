@@ -62,6 +62,7 @@ angular.module('starter.controllers', [])
         //TODO 针对选中的poi实现自己的功能
         placeSearch.search(e.poi.district);
         console.log(e.poi.district);
+        console.log(e.poi.name);
       });
     });
     $scope.chats = Chats.all();
@@ -97,24 +98,60 @@ angular.module('starter.controllers', [])
           $scope.print = data;
           var arr = data.geocodes;
           var count = data.count;
-          console.log(arr != null);
-          console.log(arr.length);
+
           if (count == 1) {
-            for (var i = 0; i < arr.length; ++i) {
+            for (var i = 0; i < arr.length; i++) {
               var item = arr[i];
               $scope.searchdetail = item.province;
+                $scope.weathercity = item.city;
+
               for(var j = 0;j<$scope.chats.length;++j){
                 if($scope.chats[j].province == $scope.searchdetail){
                   $scope.cityinfo = $scope.chats[j].citys;
                 }
               }
               break;
+
             }
           }
           else{
            alert('请输入正确地址信息');
             $state.go('tab.dash');
           }
+              console.log($scope.weathercity+'aaa');
+              AMap.service('AMap.Weather', function() {
+                  var weather = new AMap.Weather();
+
+                  //未来4天天气预报
+                  weather.getForecast($scope.weathercity, function(err, data) {
+                      if (err) {return;}
+                      var str = [];
+
+                      console.log(1);
+                      if(data.status != 0){
+                          for (var i = 0,dayWeather; i < 3; i++) {
+                              dayWeather = data.forecasts[i];
+
+                              $scope.dayWeather = data.forecasts[i];
+                              var dtArr = dayWeather.date.split("-");
+                              str.push('<div class="weatherlist">'+
+                                  '<p>'+dtArr[1]+ '-'+ dtArr[2]+'</p>'+
+                                  '<p>'+dayWeather.dayWeather+'</p>'+
+                                  '<p>'+dayWeather.nightTemp+'~' +dayWeather.dayTemp +'℃'+'</p>'+
+                                  '</div>'
+                              );
+
+                          }
+                          document.getElementById('weathertip').innerHTML = str.join('');
+                      }
+                      else{
+                          document.getElementById('weatherdiv').style('display','none');
+
+                      }
+
+
+                  });
+              });
 
         });
 

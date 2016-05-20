@@ -55,7 +55,7 @@
     })
     AMap.event.addListener(autocomplete, "select", function(e){
       //TODO 针对选中的poi实现自己的功能
-      placeSearch.search(e.poi.name);
+      placeSearch.search(e.poi.district);
       console.log(e.poi.district);
     });
   });
