@@ -1,25 +1,16 @@
 angular.module('starter.controllers', [])
 
-.controller('DashCtrl', function($scope,$state,Chats,$location,$http,$rootScope) {
-  /*  $scope.searchProvince = function searchProvince(){
-      var searchkeyword = document.getElementById('inputLocation').value;
-      $rootScope.city = searchkeyword;
+.controller('DashCtrl', function($scope,$state,Travel,$location,$http,$rootScope) {
 
-    }*/
-   /* $scope.hotsearch = function hotsearch(searchkeyword){
-      $rootScope.city = searchkeyword;
-    }*/
     var windowsArr = [];
     var marker = [];
-    console.log('进入高的');
-
+    $scope.travel = Travel.all()
     AMap.plugin(['AMap.Autocomplete','AMap.PlaceSearch'],function(){
       var autoOptions = {
         city: "", //城市，默认全国
         input: "inputLocation",//使用联想输入的input的id
 
       };
-      console.log('进入plug');
       autocomplete= new AMap.Autocomplete(autoOptions);
       var placeSearch = new AMap.PlaceSearch({
         city:''
@@ -45,7 +36,6 @@ angular.module('starter.controllers', [])
   .controller('tabsearch',  function($scope,Chats,$state,$location,$http,$rootScope) {
     var windowsArr = [];
     var marker = [];
-    console.log('进入高的');
 
     AMap.plugin(['AMap.Autocomplete','AMap.PlaceSearch'],function(){
       var autoOptions = {
@@ -53,7 +43,6 @@ angular.module('starter.controllers', [])
         input: "inputLocation2",//使用联想输入的input的id
 
       };
-      console.log('进入plug');
       autocomplete= new AMap.Autocomplete(autoOptions);
       var placeSearch = new AMap.PlaceSearch({
         city:''
@@ -75,16 +64,6 @@ angular.module('starter.controllers', [])
         $state.go('tab.chats', {chatid: searchkeyword2});
       }
     }
-   /* $scope.searchProvince = function searchProvince(){
-      var searchkeyword = document.getElementById('inputLocation').value;
-      $rootScope.city = searchkeyword;
-
-    }*/
-   /* $scope.hotsearch = function hotsearch(searchkeyword){
-      $rootScope.city = searchkeyword;
-      console.log($rootScope);
-    }
-*/
   })
 .controller('ChatsCtrl', function($scope,$stateParams,$rootScope,$state, $http,Chats) {
 
@@ -102,12 +81,36 @@ angular.module('starter.controllers', [])
           if (count == 1) {
             for (var i = 0; i < arr.length; i++) {
               var item = arr[i];
+                /*获取高德省级名称*/
               $scope.searchdetail = item.province;
+                /*获取高德市级名称*/
                 $scope.weathercity = item.city;
-
+                /*循环获取内部数据表*/
               for(var j = 0;j<$scope.chats.length;++j){
                 if($scope.chats[j].province == $scope.searchdetail){
                   $scope.cityinfo = $scope.chats[j].citys;
+                    defaultResult=[];
+                    matchResult=[];
+
+                    for(i in $scope.chats[j].citys ){
+                        if($scope.chats[j].citys[i].city ==   $scope.weathercity){
+                            matchResult.push($scope.chats[j].citys[i]);
+                        }else if($scope.chats[j].citys[i].default=='1'){
+                            defaultResult.push($scope.chats[j].citys[i]);
+                        }
+                    }
+                    if(matchResult.length>0){
+                        $scope.cityinfo =  matchResult;
+                        console.log(matchResult);
+                    }else{
+                        $scope.cityinfo =  defaultResult;
+                        console.log(defaultResult);
+
+                    }
+                    /*return;*/
+                }
+                else{
+                /*省无法匹配时*/
                 }
               }
               break;
@@ -117,21 +120,18 @@ angular.module('starter.controllers', [])
           else{
            alert('请输入正确地址信息');
             $state.go('tab.dash');
-          }
-              console.log($scope.weathercity+'aaa');
+          };
               AMap.service('AMap.Weather', function() {
                   var weather = new AMap.Weather();
 
                   //未来4天天气预报
-                  weather.getForecast($scope.weathercity, function(err, data) {
+                  weather.getForecast( $scope.weathercity, function(err, data) {
                       if (err) {return;}
                       var str = [];
-
-                      console.log(1);
                       if(data.status != 0){
                           for (var i = 0,dayWeather; i < 3; i++) {
                               dayWeather = data.forecasts[i];
-
+                                console.log(222);
                               $scope.dayWeather = data.forecasts[i];
                               var dtArr = dayWeather.date.split("-");
                               str.push('<div class="weatherlist">'+
@@ -140,12 +140,11 @@ angular.module('starter.controllers', [])
                                   '<p>'+dayWeather.nightTemp+'~' +dayWeather.dayTemp +'℃'+'</p>'+
                                   '</div>'
                               );
-
                           }
                           document.getElementById('weathertip').innerHTML = str.join('');
                       }
                       else{
-                          document.getElementById('weatherdiv').style('display','none');
+                          document.getElementById('weatherdiv').style.display = 'none';
 
                       }
 
