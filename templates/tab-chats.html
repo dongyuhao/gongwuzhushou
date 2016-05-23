@@ -5,8 +5,9 @@
       <h1>中央和国家机关人员差旅费查询</h1>
       <a class="back-btn ion-chevron-left" href="#/tab/dash"></a>
       <div class="search-end">
-        <a href="#/tab/search" style="display: inline-block;width: 6rem;line-height: 2rem;" class="ion-ios-location-outline">
-          {{searchdetail}}&nbsp;&nbsp;&nbsp;&nbsp;∨
+        <a href="#/tab/search" style="display: inline-block;width: 8rem;line-height: 2rem;position: relative" class="ion-ios-location-outline">
+          {{searchdetail}}&nbsp;&nbsp;&nbsp;&nbsp;
+          <i style="width: 1rem;height: 1rem;line-height:1rem;position: absolute;top: 0.5rem;right: -1rem" class="ion-ios-arrow-down"></i>
         </a>
       </div>
     </div>
@@ -32,15 +33,29 @@
       </div>
     </div>
     <!--部级-->
-    <div class="tab-show" ng-show="activeTab == 1">
+    <div class="tab-show">
       <div class="info-col chats-info zhusu">
       <h1 class="title">住宿补助（人/天）</h1>
       <div class="table t-c" >
-        <table>
+        <table ng-show="activeTab == 1">
           <tr ng-repeat="b in cityinfo">
             <td>{{b.name}}</td>
             <td>{{b.months}}</td>
             <td>{{b.buji}}</td>
+          </tr>
+        </table>
+        <table ng-show="activeTab == 2">
+          <tr ng-repeat="b in cityinfo">
+            <td>{{b.name}}</td>
+            <td>{{b.months}}</td>
+            <td>{{b.sijuji}}</td>
+          </tr>
+        </table>
+        <table ng-show="activeTab == 3">
+          <tr ng-repeat="b in cityinfo">
+            <td>{{b.name}}</td>
+            <td>{{b.months}}</td>
+            <td>{{b.other}}</td>
           </tr>
         </table>
       </div>
@@ -48,20 +63,27 @@
       <!--火车-->
       <div class="info-col chats-info huoche">
         <h1 class="title">火车 <span> （含高铁动车 全列软席列车）</span></h1>
-        <p>火车软席（软座 软卧）高铁/动车商务座 全列软席列车一等软座</p>
+        <p ng-show="activeTab == 1">火车软席（软座 软卧）高铁/动车商务座 全列软席列车一等软座</p>
+        <p ng-show="activeTab == 2">火车软席（软座 软卧）高铁/动车商务座 全列软席列车一等软座</p>
+        <p ng-show="activeTab == 3">火车硬席（硬座 硬卧）高铁/动车二等座 全列软席列车二等软座</p>
+
       </div>
       <!--轮船-->
       <div class="info-col chats-info lunchuan">
         <h1 class="title">轮船 <span>（不含旅游船）</span></h1>
-        <p>一等舱</p>
+        <p ng-show="activeTab == 1">一等舱</p>
+        <p ng-show="activeTab == 2">二等舱</p>
+        <p ng-show="activeTab == 3">三等舱</p>
       </div>
       <!--飞机-->
       <div class="info-col chats-info feiji">
         <h1 class="title">飞机</h1>
-        <p>头等舱</p>
+        <p ng-show="activeTab == 1">头等舱</p>
+        <p ng-show="activeTab == 2">经济舱</p>
+        <p ng-show="activeTab == 3">经济舱</p>
       </div>
     </div>
-    <!--局级-->
+<!--    &lt;!&ndash;局级&ndash;&gt;
     <div class="tab-show" ng-show="activeTab == 2">
       <div class="info-col chats-info zhusu">
       <h1 class="title">住宿补助（人/天）</h1>
@@ -75,23 +97,23 @@
         </table>
       </div>
     </div>
-      <!--火车-->
+      &lt;!&ndash;火车&ndash;&gt;
       <div class="info-col chats-info huoche">
         <h1 class="title">火车 <span>（含高铁动车 全列软席列车）</span></h1>
         <p>火车软席（软座 软卧）高铁/动车商务座 全列软席列车一等软座</p>
       </div>
-      <!--轮船-->
+      &lt;!&ndash;轮船&ndash;&gt;
       <div class="info-col chats-info lunchuan">
         <h1 class="title">轮船 <span>（不含旅游船）</span></h1>
         <p>二等舱</p>
       </div>
-      <!--飞机-->
+      &lt;!&ndash;飞机&ndash;&gt;
       <div class="info-col chats-info feiji">
         <h1 class="title">飞机</h1>
         <p>经济舱</p>
       </div>
     </div>
-    <!--其他-->
+    &lt;!&ndash;其他&ndash;&gt;
     <div class="tab-show" ng-show="activeTab == 3">
       <div class="info-col chats-info zhusu">
       <h1 class="title">住宿补助（人/天）</h1>
@@ -105,7 +127,7 @@
         </table>
       </div>
     </div>
-      <!--火车-->
+      &lt;!&ndash;火车&ndash;&gt;
       <div class="info-col chats-info huoche">
         <h1 class="title">火车 <span>（含高铁动车 全列软席列车）</span></h1>
         <p>火车硬席（硬座
@@ -114,17 +136,17 @@
           软席列车二等
           软座</p>
       </div>
-      <!--轮船-->
+      &lt;!&ndash;轮船&ndash;&gt;
       <div class="info-col chats-info lunchuan">
         <h1 class="title">轮船 <span>（不含旅游船）</span></h1>
         <p>三等舱</p>
       </div>
-      <!--飞机-->
+      &lt;!&ndash;飞机&ndash;&gt;
       <div class="info-col chats-info feiji">
         <h1 class="title">飞机</h1>
         <p>经济舱</p>
       </div>
-    </div>
+    </div>-->
     <!--其他交通工具-->
     <div class="info-col chats-info qitagongju">
       <h1 class="title">其他交通工具 <span>（不包括出租小汽车）</span></h1>
