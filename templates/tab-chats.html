@@ -5,9 +5,9 @@
       <h1>中央和国家机关人员差旅费查询</h1>
       <a class="back-btn ion-chevron-left" href="#/tab/dash"></a>
       <div class="search-end">
-        <a href="#/tab/search" style="display: inline-block;line-height: 2rem;position: relative" class="ion-ios-location-outline">
-          {{searchdetail}}-{{weathercity}}
-          <i style="width: 1rem;height: 1rem;line-height:1rem;position: absolute;top: 0.5rem;right: -1rem" class="ion-ios-arrow-down"></i>
+        <a href="#/tab/search" style="display: inline-block;line-height: 2rem;position: relative" class="ion-ios-location-outline" ng>
+          {{searchdetail}} <font ng-show="searchdetail !== weathercity">-{{weathercity}}</font>
+          <i style="width: 1rem;height: 1rem;line-height:1rem;position: absolute;top: 0.5rem;right: -1rem" class="ion-android-arrow-dropdown"></i>
         </a>
       </div>
     </div>
@@ -36,24 +36,23 @@
     <div class="tab-show">
       <div class="info-col chats-info zhusu">
       <h1 class="title">住宿补助（人/天）</h1>
-      <div class="table t-c" >
+      <div class="table t-c" style="text-align: left!important;">
         <table ng-show="activeTab == 1">
           <tr ng-repeat="b in cityinfo">
-            <td>{{b.city}}</td>
             <td>{{b.time}}</td>
             <td>{{b.level1}}</td>
           </tr>
         </table>
         <table ng-show="activeTab == 2">
           <tr ng-repeat="b in cityinfo">
-            <td>{{b.city}}</td>
+
             <td>{{b.time}}</td>
             <td>{{b.level2}}</td>
           </tr>
         </table>
         <table ng-show="activeTab == 3">
           <tr ng-repeat="b in cityinfo">
-            <td>{{b.city}}</td>
+
             <td>{{b.time}}</td>
             <td>{{b.level3}}</td>
           </tr>
