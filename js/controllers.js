@@ -5,6 +5,50 @@ angular.module('starter.controllers', [])
     var windowsArr = [];
     var marker = [];
     $scope.travel = Travel.all()
+
+        var Geo={};
+        if(navigator.geolocation){
+            navigator.geolocation.getCurrentPosition(success,error);
+        }
+        function success(position){
+            Geo.lat = position.coords.latitude;
+            Geo.lng = position.coords.longitude;
+            populateHeader(Geo.lat,Geo.lng);
+        }
+        function error(){
+            alert("对不起，您已禁用浏览器获取您的位置或者位置获取失败");
+        }
+        function populateHeader(lat,lng){
+            //解析定位错误信息
+            AMap.service('AMap.Geocoder',function(){//回调函数
+                //实例化Geocoder
+                geocoder = new AMap.Geocoder({
+                    city: "010"//城市，默认：“全国”
+                });
+
+                //TODO: 使用geocoder 对象完成相关功能
+                var lnglatXY=[lng, lat];//地图上所标点的坐标
+                geocoder.getAddress(lnglatXY, function(status, result) {
+                    if (status === 'complete' && result.info === 'OK') {
+                        //获得了有效的地址信息:
+                        //即，result.regeocode.formattedAddress
+                        geocoder_CallBack(result);
+                    }else{
+                        //获取地址失败
+                    }
+                });
+            })
+            function geocoder_CallBack(data) {
+                var address = data.regeocode.formattedAddress; //返回地址描述
+                $rootScope.addd = address;
+                console.log($rootScope.addd);
+            }
+        }
+        $scope.showmylocal =function(){
+            console.log($rootScope.addd);
+            $state.go('tab.chats', {chatid:  $rootScope.addd});
+        }
+
     AMap.plugin(['AMap.Autocomplete','AMap.PlaceSearch'],function(){
       var autoOptions = {
         city: "", //城市，默认全国

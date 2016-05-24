@@ -31,12 +31,15 @@
     AMap.event.addListener(geolocation, 'complete', onComplete);//返回定位信息
     AMap.event.addListener(geolocation, 'error', onError);      //返回定位出错信息
   });
+
   //解析定位结果
   function onComplete(data) {
     var str=['定位成功'];
     console.log(data);
     str.push('经度：' + data.position.getLng());
     str.push('纬度：' + data.position.getLat());
+    datalng = data.position.getLng();
+    datalat = data.position.getLng();
     str.push('精度：' + data.accuracy + ' 米');
     str.push('是否经过偏移：' + (data.isConverted ? '是' : '否'));
     document.getElementById('tip').innerHTML = str.join('<br>');
@@ -46,7 +49,7 @@
     document.getElementById('tip').innerHTML = '定位失败';
   }
   var map = new AMap.Map("container"),
-     lnglatXY = [116.405285, 39.904989]; //已知点坐标
+     lnglatXY = [datalng, datalat]; //已知点坐标
   function regeocoder() {  //逆地理编码
     var geocoder = new AMap.Geocoder({
       radius: 1000,
@@ -66,6 +69,7 @@
   function geocoder_CallBack(data) {
     var address = data.regeocode.formattedAddress; //返回地址描述
     document.getElementById("result").innerHTML = address;
+    console.log(address);
   }
 </script>
 </body>
