@@ -2,6 +2,40 @@
 body{
   font: 400 .7rem/1.5 Arial,"Lucida Grande",Verdana,"Microsoft YaHei",hei!important;
 }
+
+@font-face {
+  font-family: "weather";
+  url("artill_clean_icons-webfont.eot") format('embedded-opentype'),
+  url("artill_clean_icons-webfont.woff") format('woff'),
+  url("artill_clean_icons-webfont.ttf") format('truetype'),
+  url("artill_clean_icons-webfont.svg") format('svg');
+}
+i.icn-weather {
+  font-family: weather;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+  font-style: normal;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased; }
+i.icn-weather[data-weather-icn='霾转多云']::before, i.icn-weather[data-weather-icn='霾转阴']::before, i.icn-weather[data-weather-icn='霾转晴']::before, i.icn-weather[data-weather-icn='霾']::before, i.icn-weather[data-weather-icn='霾转雾']::before {
+  content: "∞"; }
+i.icn-weather[data-weather-icn='晴']::before, i.icn-weather[data-weather-icn='晴转多云']::before, i.icn-weather[data-weather-icn='晴转阴']::before {
+  content: "1"; }
+i.icn-weather[data-weather-icn='阴']::before, i.icn-weather[data-weather-icn='阴转晴']::before, i.icn-weather[data-weather-icn='阴转阵雨']::before, i.icn-weather[data-weather-icn='阴转小雨']::before, i.icn-weather[data-weather-icn='阴转雨夹雪']::before, i.icn-weather[data-weather-icn='阴转多云']::before, i.icn-weather[data-weather-icn='阴转小雪']::before {
+  content: "3"; }
+i.icn-weather[data-weather-icn='多云']::before, i.icn-weather[data-weather-icn='多云转晴']::before, i.icn-weather[data-weather-icn='多云转阴']::before, i.icn-weather[data-weather-icn='多云转阵雨']::before, i.icn-weather[data-weather-icn='多云转小雨']::before, i.icn-weather[data-weather-icn='多云转中雨']::before, i.icn-weather[data-weather-icn='多云转雨夹雪']::before, i.icn-weather[data-weather-icn='多云转小雪']::before {
+  content: "A"; }
+i.icn-weather[data-weather-icn='阵雨']::before, i.icn-weather[data-weather-icn='小雨转阴']::before, i.icn-weather[data-weather-icn='小雨转中雨']::before, i.icn-weather[data-weather-icn='霾转小雨']::before, i.icn-weather[data-weather-icn='小雨']::before, i.icn-weather[data-weather-icn='小雨转多云']::before, i.icn-weather[data-weather-icn='阵雨转小雨']::before, i.icn-weather[data-weather-icn='小雨转晴']::before, i.icn-weather[data-weather-icn='阵雨转多云']::before, i.icn-weather[data-weather-icn='小雨转小雪']::before, i.icn-weather[data-weather-icn='阵雨转小雪']::before, i.icn-weather[data-weather-icn='小雨转阵雨']::before {
+  content: "G"; }
+i.icn-weather[data-weather-icn='阵雨转阴']::before, i.icn-weather[data-weather-icn='阵雨转晴']::before, i.icn-weather[data-weather-icn='中雨转阴']::before, i.icn-weather[data-weather-icn='中雨']::before, i.icn-weather[data-weather-icn='中雨转小雨']::before, i.icn-weather[data-weather-icn='大雨']::before {
+  content: "M"; }
+i.icn-weather[data-weather-icn='中雨转阵雨']::before {
+  content: "p"; }
+i.icn-weather[data-weather-icn='小雨转雨夹雪']::before, i.icn-weather[data-weather-icn='雨夹雪转小雨']::before {
+  content: "I"; }
+i.icn-weather[data-weather-icn='雨夹雪转小雨']::before, i.icn-weather[data-weather-icn='雨夹雪转晴']::before, i.icn-weather[data-weather-icn='雨夹雪']::before, i.icn-weather[data-weather-icn='小雪']::before, i.icn-weather[data-weather-icn='雨夹雪转多云']::before, i.icn-weather[data-weather-icn='小雪转雨夹雪']::before {
+  content: "I"; }
+i.icn-weather[data-weather-icn='雷阵雨转阵雨']::before {
+  content: "Y"; }
 a{
   text-decoration: none;
   color: inherit;
