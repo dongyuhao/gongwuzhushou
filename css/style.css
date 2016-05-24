@@ -14,8 +14,16 @@ i.icn-weather {
   text-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
   font-style: normal;
   font-size: 3rem;
+  position: absolute;
   line-height: 3rem;
-  -webkit-font-smoothing: antialiased; }
+  display: inline-block;
+  -webkit-font-smoothing: antialiased;
+  top: 0;
+  left: 50%;
+  margin-left: -2.7rem;
+  width: 3rem;
+  text-align: center;
+}
 i.icn-weather[data-weather-icn='霾转多云']::before, i.icn-weather[data-weather-icn='霾转阴']::before, i.icn-weather[data-weather-icn='霾转晴']::before, i.icn-weather[data-weather-icn='霾']::before, i.icn-weather[data-weather-icn='霾转雾']::before {
   content: "∞"; }
 i.icn-weather[data-weather-icn='晴']::before, i.icn-weather[data-weather-icn='晴转多云']::before, i.icn-weather[data-weather-icn='晴转阴']::before {
@@ -39,6 +47,15 @@ i.icn-weather[data-weather-icn='雷阵雨转阵雨']::before {
 .weathertip .weatherlist p.weather-p{
   height: 3rem;
   line-height: 3rem;
+  position: relative;
+}
+.weathertip .weatherlist p.weather-p span{
+  display: inline-block;
+  line-height: 3rem;
+  position: absolute;
+  left: 50%;
+  top: 0;
+  margin-left: 0.3rem;
 }
 a{
   text-decoration: none;
