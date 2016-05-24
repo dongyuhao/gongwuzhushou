@@ -136,8 +136,7 @@ angular.module('starter.controllers', [])
                               var dtArr = dayWeather.date.split("-");
                               str.push('<div class="weatherlist">'+
                                   '<p>'+dtArr[1]+ '-'+ dtArr[2]+'</p>'+
-                                  '<p><i class="icn-weather" data-weather-icn="'+dayWeather.dayWeather+'"></i></p>'+
-                                  '<p>'+dayWeather.dayWeather+'</p>'+
+                                  '<p class="weather-p"><i class="icn-weather" data-weather-icn="'+dayWeather.dayWeather+'"></i>&nbsp;&nbsp;'+dayWeather.dayWeather+'</p>'+
                                   '<p>'+dayWeather.nightTemp+'~' +dayWeather.dayTemp +'℃'+'</p>'+
                                   '</div>'
                               );

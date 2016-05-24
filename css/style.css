@@ -5,16 +5,16 @@ body{
 
 @font-face {
   font-family: "weather";
-  url("artill_clean_icons-webfont.eot") format('embedded-opentype'),
-  url("artill_clean_icons-webfont.woff") format('woff'),
-  url("artill_clean_icons-webfont.ttf") format('truetype'),
-  url("artill_clean_icons-webfont.svg") format('svg');
+  src:url("./artill_clean_icons-webfont.eot") format('embedded-opentype'),
+  url("./artill_clean_icons-webfont.woff") format('woff'),
+  url("./artill_clean_icons-webfont.ttf") format('truetype');
 }
 i.icn-weather {
   font-family: weather;
   text-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
   font-style: normal;
-  line-height: 1;
+  font-size: 3rem;
+  line-height: 3rem;
   -webkit-font-smoothing: antialiased; }
 i.icn-weather[data-weather-icn='霾转多云']::before, i.icn-weather[data-weather-icn='霾转阴']::before, i.icn-weather[data-weather-icn='霾转晴']::before, i.icn-weather[data-weather-icn='霾']::before, i.icn-weather[data-weather-icn='霾转雾']::before {
   content: "∞"; }
@@ -36,6 +36,10 @@ i.icn-weather[data-weather-icn='雨夹雪转小雨']::before, i.icn-weather[data
   content: "I"; }
 i.icn-weather[data-weather-icn='雷阵雨转阵雨']::before {
   content: "Y"; }
+.weathertip .weatherlist p.weather-p{
+  height: 3rem;
+  line-height: 3rem;
+}
 a{
   text-decoration: none;
   color: inherit;
@@ -375,11 +379,11 @@ a{
 
 .chats-info h1{
   color: #ffffff!important;
-  font-size: 1.6rem;
+  font-size: 1.5rem;
   line-height: 3rem;
 }
 .chats-info h1 span{
-  font-size: 1.4rem;
+  font-size: 1.3rem;
 }
 
 .chats-info .table {
