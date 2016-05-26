@@ -1,7 +1,7 @@
 /**
  * Created by dongyh on 2015/9/1.
  */
-angular.module('starter', ['ui.router','ionic', 'starter.controllers', 'starter.services'])
+angular.module('starter', ['ui.router','ionic', 'starter.controllers'])
 
 .run(function($rootScope, $state, $stateParams,$ionicPlatform) {
     $rootScope.$state = $state;
