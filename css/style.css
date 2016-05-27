@@ -97,7 +97,7 @@ i.icn-weather[data-weather-icn='大雨']::before {
 /*中雨-大雨\大雨-暴雨*/
 i.icn-weather[data-weather-icn='中雨-大雨']::before,
 i.icn-weather[data-weather-icn='大雨-暴雨']::before{
-    content: "p";
+    content: "M";
 }
 /*阵雪、小雪、中雪、大雪、暴雪*/
 i.icn-weather[data-weather-icn='阵雪']::before,
