@@ -107,7 +107,7 @@ angular.module('starter.controllers', [])
             });
         });
 
-        $http.get("http://dongyh.cn/gongwuzhushou/js/data.json")
+        $http.get("./js/data.json")
             .success(function(data){
                 $scope.chats = data;
             })
@@ -132,7 +132,7 @@ angular.module('starter.controllers', [])
         /*
          $scope.cityname = $rootScope.city;
          */
-        $http.get("http://dongyh.cn/gongwuzhushou/js/data.json")
+        $http.get("./js/data.json")
             .success(function(data){
                 $scope.chats = data;
             })
@@ -160,11 +160,13 @@ angular.module('starter.controllers', [])
                                 $scope.cityinfo = $scope.chats[j].citys;
                                 defaultResult=[];
                                 matchResult=[];
-
+                                /*省内进行循环*/
                                 for(i in $scope.chats[j].citys ){
                                     if($scope.chats[j].citys[i].city ==   $scope.weathercity){
+                                        /*选取匹配市名称*/
                                         matchResult.push($scope.chats[j].citys[i]);
                                     }else if($scope.chats[j].citys[i].default=='1'){
+                                        /*无匹配时选取默认值default=1*/
                                         defaultResult.push($scope.chats[j].citys[i]);
                                     }
                                 }
