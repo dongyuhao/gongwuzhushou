@@ -141,7 +141,7 @@ angular.module('starter.controllers', [])
             }
 
         );
-        $http.get("http://restapi.amap.com/v3/geocode/geo?key=1292ad930cb9e02938e4b094a380181f&address=" + $scope.cityname + "&city=")
+        $http.get("http://restapi.amap.com/v3/geocode/geo?key=4fb9552784cab1a76e7cd771ecaf85d8&address=" + $scope.cityname + "&city=")
             .success(function (data) {
                 $scope.print = data;
                 var arr = data.geocodes;
@@ -165,8 +165,8 @@ angular.module('starter.controllers', [])
                                     if($scope.chats[j].citys[i].city ==   $scope.weathercity){
                                         /*选取匹配市名称*/
                                         matchResult.push($scope.chats[j].citys[i]);
-                                    }else if($scope.chats[j].citys[i].default=='1'){
-                                        /*无匹配时选取默认值default=1*/
+                                    }else if($scope.chats[j].citys[i].isDefault=='1'){
+                                        /*无匹配时选取默认值isDefault=1*/
                                         defaultResult.push($scope.chats[j].citys[i]);
                                     }
                                 }
