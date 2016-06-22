@@ -905,7 +905,7 @@
     "level3": "420",
     "hot": "0",
     "isDefault": "1"
-  }, {"city": "深圳", "time": "全年", "level1": "900", "level2": "550", "level3": "450", "hot": "0", "isDefault": "0"}],
+  }, {"city": "深圳市", "time": "全年", "level1": "900", "level2": "550", "level3": "450", "hot": "0", "isDefault": "0"}],
   "province": "广东省",
   "shortName": "广东"
 }, {
@@ -1123,14 +1123,6 @@
     "isDefault": "0"
   }, {
     "city": "南岸区",
-    "time": "全年",
-    "level1": "800",
-    "level2": "480",
-    "level3": "370",
-    "hot": "0",
-    "isDefault": "0"
-  }, {
-    "city": "大渡口区",
     "time": "全年",
     "level1": "800",
     "level2": "480",
@@ -1662,7 +1654,7 @@
     "hot": "0",
     "isDefault": "1"
   }, {
-    "city": "克州",
+    "city": "克孜勒苏柯尔克孜自治州",
     "time": "全年",
     "level1": "800",
     "level2": "480",
