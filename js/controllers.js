@@ -1,7 +1,7 @@
 angular.module('starter.controllers', [])
 
     .controller('DashCtrl', function($scope,$state,$location,$http,$rootScope) {
-
+        $scope.pageClass = 'page-home';
         var windowsArr = [];
         var marker = [];
         $http.get("./js/infomation.json")
@@ -88,7 +88,7 @@ angular.module('starter.controllers', [])
     .controller('tabsearch',  function($scope,$state,$location,$http,$rootScope) {
         var windowsArr = [];
         var marker = [];
-
+        $scope.pageClass = 'page-contact';
         AMap.plugin(['AMap.Autocomplete','AMap.PlaceSearch'],function(){
             var autoOptions = {
                 city: "", //城市，默认全国
@@ -127,7 +127,7 @@ angular.module('starter.controllers', [])
         }
     })
     .controller('ChatsCtrl', function($scope,$stateParams,$rootScope,$state, $http) {
-
+        $scope.pageClass = 'page-about';
         $scope.cityname = $stateParams.chatid;
         /*
          $scope.cityname = $rootScope.city;
