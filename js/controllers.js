@@ -71,17 +71,28 @@ angular.module('starter.controllers', [])
                 //TODO 针对选中的poi实现自己的功能
                 placeSearch.search(e.poi.district);
                 console.log(e.poi.district);
+                $scope.placesearch = e.poi.district;
             });
         });
         $scope.jump = function(){
-            var searchkeyword = document.getElementById('inputLocation').value;
-            console.log('首页+'+searchkeyword)
+            var searchkeyword = $scope.placesearch;
+            if(typeof(searchkeyword)=='undefined'){
+                var searchkeyword = document.getElementById('inputLocation').value;
+                if(searchkeyword=='' ){
+                    alert('请输入您要搜索的地址');
+                }else{
+                    $state.go('tab.chats', {chatid: searchkeyword});
+                    console.log('首页Input+'+searchkeyword);
+                }
 
-            if(searchkeyword.length==0){
-                alert('请输入地址信息');
-            }else{
-                $state.go('tab.chats', {chatid: searchkeyword});
             }
+            else{
+
+                console.log('首页+'+searchkeyword);
+                $state.go('tab.chats', {chatid: searchkeyword});
+
+            }
+
         }
     })
 
@@ -117,12 +128,22 @@ angular.module('starter.controllers', [])
 
         )
         $scope.jump = function(){
-            var searchkeyword2 = document.getElementById('inputLocation2').value;
-            console.log('搜索页+'+searchkeyword2)
-            if(searchkeyword2.length==0){
-                alert('请输入地址信息');
-            }else{
+            var searchkeyword2 = $scope.placesearch;
+            if(typeof(searchkeyword2)=='undefined'){
+                var searchkeyword2 = document.getElementById('inputLocation2').value;
+                if(searchkeyword2=='' ){
+                    alert('请输入您要搜索的地址');
+                }else{
+                    $state.go('tab.chats', {chatid: searchkeyword2});
+                    console.log('搜索页Input+'+searchkeyword2);
+                }
+
+            }
+            else{
+
+                console.log('搜索页+'+searchkeyword2);
                 $state.go('tab.chats', {chatid: searchkeyword2});
+
             }
         }
     })
@@ -154,6 +175,9 @@ angular.module('starter.controllers', [])
                         $scope.searchdetail = item.province;
                         /*获取高德市级名称*/
                         $scope.weathercity = item.city;
+                        /*获取高德地级名称*/
+                        $scope.wdistrict = item.district;
+                        console.log(item.district);
                         /*循环获取内部数据表*/
                         for(var j = 0;j<$scope.chats.length;++j){
                             if($scope.chats[j].province == $scope.searchdetail){
@@ -162,7 +186,7 @@ angular.module('starter.controllers', [])
                                 matchResult=[];
                                 /*省内进行循环*/
                                 for(i in $scope.chats[j].citys ){
-                                    if($scope.chats[j].citys[i].city ==   $scope.weathercity){
+                                    if($scope.chats[j].citys[i].city ==   $scope.weathercity && $scope.chats[j].citys[i].city ==   $scope.wdistrict){
                                         /*选取匹配市名称*/
                                         matchResult.push($scope.chats[j].citys[i]);
                                     }else if($scope.chats[j].citys[i].isDefault=='1'){
