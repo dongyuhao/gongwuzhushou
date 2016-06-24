@@ -186,7 +186,7 @@ angular.module('starter.controllers', [])
                                 matchResult=[];
                                 /*省内进行循环*/
                                 for(i in $scope.chats[j].citys ){
-                                    if($scope.chats[j].citys[i].city ==   $scope.weathercity && $scope.chats[j].citys[i].city ==   $scope.wdistrict){
+                                    if($scope.chats[j].citys[i].city ==   $scope.weathercity || $scope.chats[j].citys[i].city ==   $scope.wdistrict){
                                         /*选取匹配市名称*/
                                         matchResult.push($scope.chats[j].citys[i]);
                                     }else if($scope.chats[j].citys[i].isDefault=='1'){
