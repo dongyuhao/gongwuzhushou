@@ -1,0 +1,52 @@
+<ion-view>
+
+  <ion-content class="detail" style="background: #e4e4e4">
+    <div class="top">
+      <div class="search-end">
+        <div class="top-search ion-ios-search">
+          <input type="text" name="" id="inputLocation2" class="inputLocation"  ng-model="inputLocation"  placeholder="请输入出差目的地"/>
+          <a ng-click="jump()">搜索</a>
+        </div>
+
+
+      </div>
+    </div>
+    <div class="hot-local info-col">
+      <h1 class="title">热门城市</h1>
+      <ul>
+        <li><a href="#/tab/chats/北京">北京</a></li>
+        <li><a href="#/tab/chats/上海">上海</a></li>
+        <li><a href="#/tab/chats/广州">广州</a></li>
+        <li><a href="#/tab/chats/天津">天津</a></li>
+        <li><a href="#/tab/chats/长沙">长沙</a></li>
+        <li><a href="#/tab/chats/延安">延安</a></li>
+        <li><a href="#/tab/chats/沈阳">沈阳</a></li>
+        <li><a href="#/tab/chats/西安">西安</a></li>
+      </ul>
+    </div>
+  <!--  <div class="a-z info-col">
+      <h1 class="title">字母排序</h1>
+      <ul>
+        <li ng-repeat="elm in elms"><a ng-click="goToAnchor(elm)">{{elm}}</a></li>
+      </ul>
+    </div>-->
+
+
+    <div  class="hot-local info-col">
+      <h1 class="title">出差目的地</h1>
+
+      <ul>
+        <li ng-repeat="c in chats"><a href="#/tab/chats/{{c.province}}">{{c.shortName}}</a></li>
+      </ul>
+    </div>
+
+
+    <div class="footer">
+      <p style="text-align: center"><img src="./img/er.bmp" alt=""/></p>
+      <p>若您在使用过程中遇到问题 <br/>请致电：010-69001234</p>
+      <p>中央编办域名中心&nbsp;&nbsp;&nbsp;&nbsp;版权所有</p>
+
+    </div>
+
+  </ion-content>
+</ion-view>

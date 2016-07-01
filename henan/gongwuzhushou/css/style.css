@@ -1,0 +1,826 @@
+/* Empty. Add your own CSS if you like */
+body {
+    font: 400 .7rem/1.5 Arial, "Lucida Grande", Verdana, "Microsoft YaHei", hei !important;
+}
+
+@font-face {
+    font-family: "weather";
+    src: url("./artill_clean_icons-webfont.eot") format('embedded-opentype'),
+    url("./artill_clean_icons-webfont.woff") format('woff'),
+    url("./artill_clean_icons-webfont.ttf") format('truetype');
+}
+
+i.icn-weather {
+    font-family: weather;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+    font-style: normal;
+    font-size: 3rem;
+    position: absolute;
+    line-height: 3rem;
+    display: inline-block;
+    -webkit-font-smoothing: antialiased;
+    top: 0;
+    left: 50%;
+    margin-left: -2.7rem;
+    width: 3rem;
+    text-align: center;
+}
+/*霾转多云、霾转阴、霾转晴、霾、霾转雾、雾、浮尘、扬沙、强沙尘暴*/
+i.icn-weather[data-weather-icn='雾']::before,
+i.icn-weather[data-weather-icn='霾转多云']::before,
+i.icn-weather[data-weather-icn='霾转阴']::before,
+i.icn-weather[data-weather-icn='霾转晴']::before,
+i.icn-weather[data-weather-icn='霾']::before,
+i.icn-weather[data-weather-icn='轻霾']::before,
+i.icn-weather[data-weather-icn='霾转雾']::before,
+i.icn-weather[data-weather-icn='浮尘']::before,
+i.icn-weather[data-weather-icn='扬沙']::before,
+i.icn-weather[data-weather-icn='强沙尘暴']::before {
+    content: "∞";
+}
+i.icn-weather[data-weather-icn='飑']::before,
+i.icn-weather[data-weather-icn='龙卷风']::before,
+i.icn-weather[data-weather-icn='弱高吹雪']::before, {
+    content: ":";
+}
+/*晴、晴转多云、晴转阴、*/
+i.icn-weather[data-weather-icn='晴']::before,
+i.icn-weather[data-weather-icn='晴转多云']::before,
+i.icn-weather[data-weather-icn='晴转阴']::before {
+    content: "1";
+}
+/*阴、阴转晴、阴转阵雨、阴转小雨、阴转雨夹雪、阴转多云、阴转小雪*/
+i.icn-weather[data-weather-icn='阴']::before,
+i.icn-weather[data-weather-icn='阴转晴']::before,
+i.icn-weather[data-weather-icn='阴转阵雨']::before,
+i.icn-weather[data-weather-icn='阴转小雨']::before,
+i.icn-weather[data-weather-icn='阴转雨夹雪']::before,
+i.icn-weather[data-weather-icn='阴转多云']::before,
+i.icn-weather[data-weather-icn='阴转小雪']::before {
+    content: "3";
+}
+/*多云、多云转晴、多云转阴、多云转阵雨、多云转小雨、多云转中雨、多云转中雨、多云转雨夹雪、多云转小雪*/
+i.icn-weather[data-weather-icn='多云']::before,
+i.icn-weather[data-weather-icn='多云转晴']::before,
+i.icn-weather[data-weather-icn='多云转阴']::before,
+i.icn-weather[data-weather-icn='多云转阵雨']::before,
+i.icn-weather[data-weather-icn='多云转小雨']::before,
+i.icn-weather[data-weather-icn='多云转中雨']::before,
+i.icn-weather[data-weather-icn='多云转雨夹雪']::before,
+i.icn-weather[data-weather-icn='多云转小雪']::before {
+    content: "A";
+}
+/*阵雨、小雨转阴、小雨-中雨、霾转小雨、小雨、小雨转多云、阵雨转小雨、小雨转晴、阵雨转多云、小雨转小雪、阵雨转小雪、小雨转阵雨*/
+i.icn-weather[data-weather-icn='阵雨']::before,
+i.icn-weather[data-weather-icn='小雨转阴']::before,
+i.icn-weather[data-weather-icn='小雨-中雨']::before,
+i.icn-weather[data-weather-icn='霾转小雨']::before,
+i.icn-weather[data-weather-icn='小雨']::before,
+i.icn-weather[data-weather-icn='小雨转多云']::before,
+i.icn-weather[data-weather-icn='阵雨转小雨']::before,
+i.icn-weather[data-weather-icn='小雨转晴']::before,
+i.icn-weather[data-weather-icn='阵雨转多云']::before,
+i.icn-weather[data-weather-icn='小雨转小雪']::before,
+i.icn-weather[data-weather-icn='阵雨转小雪']::before,
+i.icn-weather[data-weather-icn='小雨转阵雨']::before {
+    content: "G";
+}
+/*阵雨转阴、阵雨转晴、中雨转阴、中雨、中雨转小雨、大雨*/
+i.icn-weather[data-weather-icn='阵雨转阴']::before,
+i.icn-weather[data-weather-icn='阵雨转晴']::before,
+i.icn-weather[data-weather-icn='中雨转阴']::before,
+i.icn-weather[data-weather-icn='中雨']::before,
+i.icn-weather[data-weather-icn='中雨转小雨']::before,
+i.icn-weather[data-weather-icn='大雨']::before {
+    content: "M";
+}
+/*中雨-大雨\大雨-暴雨*/
+i.icn-weather[data-weather-icn='中雨-大雨']::before,
+i.icn-weather[data-weather-icn='大雨-暴雨']::before{
+    content: "M";
+}
+/*阵雪、小雪、中雪、大雪、暴雪*/
+i.icn-weather[data-weather-icn='阵雪']::before,
+i.icn-weather[data-weather-icn='小雪']::before,
+i.icn-weather[data-weather-icn='中雪']::before,
+i.icn-weather[data-weather-icn='大雪']::before,
+i.icn-weather[data-weather-icn='暴雪']::before, {
+    content: "I";
+}
+/*暴雨、大暴雨、特大暴雨\大暴雨转特大暴雨\暴雨-大暴雨*/
+i.icn-weather[data-weather-icn='暴雨']::before,
+i.icn-weather[data-weather-icn='大暴雨']::before,
+i.icn-weather[data-weather-icn='特大暴雨']::before,
+i.icn-weather[data-weather-icn='大暴雨-特大暴雨']::before,
+i.icn-weather[data-weather-icn='暴雨-大暴雨']::before {
+    content: "K";
+}
+/*小雨转雨夹雪、雨夹雪转小雨、小雪-中雪、中雪-大雪、大雪-暴雪*/
+i.icn-weather[data-weather-icn='小雨转雨夹雪']::before,
+i.icn-weather[data-weather-icn='雨夹雪转小雨']::before,
+i.icn-weather[data-weather-icn='小雪-中雪']::before,
+i.icn-weather[data-weather-icn='中雪-大雪']::before,
+i.icn-weather[data-weather-icn='大雪-暴雪']::before {
+    content: "I";
+}
+/*雨夹雪转小雨、雨夹雪转晴、雨夹雪、小雪、雨夹雪转多云、小雪转雨夹雪*/
+i.icn-weather[data-weather-icn='雨夹雪转小雨']::before,
+i.icn-weather[data-weather-icn='雨夹雪转晴']::before,
+i.icn-weather[data-weather-icn='雨夹雪']::before,
+i.icn-weather[data-weather-icn='小雪']::before,
+i.icn-weather[data-weather-icn='雨夹雪转多云']::before,
+i.icn-weather[data-weather-icn='小雪转雨夹雪']::before {
+    content: "I";
+}
+/*雷阵雨转阵雨、雷阵雨、雷阵雨并伴有冰雹*/
+i.icn-weather[data-weather-icn='雷阵雨转阵雨']::before,
+i.icn-weather[data-weather-icn='雷阵雨']::before,
+i.icn-weather[data-weather-icn='雷阵雨并伴有冰雹']::before {
+    content: "Y";
+}
+
+
+.weathertip .weatherlist p.weather-p {
+    height: 3rem;
+    line-height: 3rem;
+    position: relative;
+}
+
+.weathertip .weatherlist p.weather-p span {
+    display: inline-block;
+    line-height: 3rem;
+    position: absolute;
+    left: 50%;
+    top: 0;
+    margin-left: 0.3rem;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.top {
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    background: #e6f1f7;
+    padding: 0.4rem 0.5rem 1.4rem 0.5rem;
+    overflow: hidden;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    background: url("../img/top-bg.jpg") top center no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+.top .back-btn {
+    color: #fff;
+    position: absolute;
+    top: 5rem;
+    font-size: 1rem;
+    width: 2rem;
+    height: 2rem;
+    display: block;
+    left: 0rem;
+    text-align: center;
+}
+
+.top h1 {
+    line-height: 3;
+    font-size: 1.3rem;
+    color: #ffffff;
+    text-align: center;
+    margin-bottom: 0;
+}
+
+.top-search {
+    margin: 0px 10px;
+    height: 3rem;
+    /* width: 100%; */
+    line-height: normal;
+    /* display: inline-block; */
+    /* padding: 0.5rem 1rem 0.5rem 1.4rem; */
+    /* background-color: #FFF; */
+    border-radius: 2rem;
+    overflow: hidden;
+    position: relative;
+    border: 1px solid #fff;
+}
+
+.top-search a {
+    width: 20%;
+    text-align: center;
+    display: block;
+    float: left;
+    line-height: 3rem;
+    color: #fff;
+    height: 3rem;
+    text-decoration: none;
+    border-right: 1px solid #fff;
+}
+
+.top-search input {
+    width: 85%;
+    padding-top: 0px;
+    line-height: 3rem;
+    height: 3rem;
+    background: none;
+    color: #fff;
+    font-size: 100%;
+    padding-bottom: 0;
+    /* padding-left: 1rem; */
+    float: left;
+    font-size: 1rem;
+}
+
+.search-input {
+    width: 70%;
+    display: inline-block;
+    text-align: left;
+    color: #fff;
+    padding-left: 1rem;
+    line-height: 3rem;
+}
+
+.search-input.ion-ios-search:before {
+    /* margin-top: 0.5rem; */
+    float: left;
+    height: 3rem;
+    width: 0.8rem;
+    line-height: 3rem;
+}
+
+.hot-local {
+    background: #fff;
+    /* margin-top: 10rem; */
+}
+
+.hot-local h1 {
+    color: #666;
+    line-height: 1rem;
+    padding: 0.25rem 0.5rem 0.25rem 2rem;
+    display: block;
+    text-align: left;
+}
+
+.hot-local ul {
+    overflow: hidden;
+    padding: 1rem 2rem;
+}
+
+.hot-local ul li {
+    width: 22%;
+    float: left;
+    height: 2rem;
+    line-height: 2rem;
+    padding: 0 0.25rem;
+    box-sizing: border-box;
+    text-align: center;
+    margin: 0.5rem 3% 0.5rem 0;
+    position: relative;
+    white-space: nowrap;
+    overflow: hidden;
+    border-radius: 1rem;
+    text-overflow: ellipsis;
+    border: 1px solid #c9c9c9;
+    letter-spacing: 0.2rem;
+}
+
+.hot-local ul li a {
+    display: block;
+    font-size: 1rem;
+}
+
+.info-col {
+    background: #fff;
+    margin: 0.4rem 0.5rem;
+}
+
+.info-col h1 {
+    color: #000;
+    line-height: 2.4rem;
+    padding: 0.25rem 0.25rem 0.25rem 3%;
+    display: block;
+    text-align: left;
+    margin-bottom: 0;
+    font-size: 1.4rem;
+}
+
+.info-col ul {
+    overflow: hidden;
+    padding: 0.2rem 3%;
+}
+
+.hot-local-img ul li {
+    width: 22%;
+    float: left;
+    height: 6rem;
+    line-height: 2rem;
+    padding: 0 0.25rem;
+    box-sizing: border-box;
+    text-align: center;
+    margin: 0.5rem 3% 1rem 0;
+    position: relative;
+    white-space: nowrap;
+    overflow: hidden;
+    border-radius: 1rem;
+    text-overflow: ellipsis;
+}
+
+.hot-local-img ul li a {
+    display: inherit;
+}
+
+.hot-local-img ul li .img-div {
+    width: 100%;
+    height: 4rem;
+    overflow: hidden;
+    border-radius: 50% 50%;
+    margin: 0 auto;
+}
+
+.hot-local-img ul li img {
+    width: 100%; /* height: 4rem; */
+}
+
+.hot-local-img ul li span {
+    display: block;
+    height: 2rem;
+    line-height: 2rem;
+    letter-spacing: 0.2rem;
+    text-align: center;
+    font-size: 1rem;
+}
+
+.hot-travel ul {
+
+}
+
+.hot-travel ul li {
+    padding: 0.5rem 0;
+    border: solid #c9c9c9;
+    border-width: 1px 0px 0px 0px;
+    overflow: hidden
+}
+
+.hot-travel ul li .img-div {
+    display: none;
+    width: 6rem;
+    height: 6rem;
+    float: left;
+}
+
+.hot-travel ul li img {
+    width: 100%;
+    height: 100%;
+}
+
+.hot-travel ul li a {
+    display: inherit;
+}
+
+.hot-travel ul li h1 {
+    /* float: left; */
+    margin: 0px; /*margin-left: 7rem;*/
+    padding: 0px;
+    line-height: 1.5rem;
+    font-size: 1.2rem;
+}
+
+.hot-travel ul li p {
+    /* float: left; *//*margin-left: 7rem;*/
+    line-height: 1.5rem;
+    color: #000;
+    height: 3rem;
+    overflow: hidden;
+    margin-bottom: 0px;
+}
+
+.search-end {
+    margin: 0px 10px;
+    height: 4rem;
+    line-height: normal;
+    padding: 0.5rem 0rem 0.5rem 0rem;
+    border-radius: 1rem;
+    overflow: hidden;
+    text-align: center;
+    color: #ffffff;
+    font-size: 1rem;
+}
+
+.search-end .ion-ios-search:before {
+    float: left;
+    display: block;
+    width: 2rem;
+    height: 3rem;
+    line-height: 3rem;
+    text-align: center;
+    /* margin-top: 0.5rem; */
+}
+
+.search-end .top-search {
+    /* padding: 0.5rem 1rem 0.5rem 1.4rem; */
+}
+
+.search-end .top-search input {
+    float: left;
+    width: 70%;
+    padding-left: 1rem;
+}
+
+.search-end .top-search a {
+    float: right;
+    width: 18%;
+    border-right: none;
+    font-size: 1rem;
+    position: absolute;
+    right: 1rem;
+    top: 0rem;
+    height: 3rem;
+    text-align: right;
+    line-height: 3rem;
+}
+
+.info-col .table {
+
+}
+
+.info-col .table table {
+    width: 100%;
+    table-layout: fixed;
+}
+
+.info-col .table table tr {
+
+}
+
+.info-col .table table tr td {
+    padding: 0.4rem 0.2rem;
+}
+
+.info-col .table table tr th {
+    text-align: center;
+    font-size: 0.7rem;
+}
+
+.t-c {
+    text-align: center;
+}
+
+.detail .info-col {
+    padding: 0 0.2rem 0.5rem;
+}
+
+.a-z {
+
+}
+
+.a-z ul {
+
+}
+
+.a-z ul li {
+    width: 16.66%;
+    border: 1px solid #e1e1e1;
+    font-size: 1rem;
+    text-align: center;
+    float: left;
+}
+
+.ion-ios-arrow-down {
+    float: right;
+}
+
+.chat-tab {
+    overflow: hidden;
+    margin-top: -1rem;
+}
+
+.chat-tab .chat-tab-btn {
+    width: 33%;
+    height: 4rem;
+    float: left;
+    background-size: contain;
+    position: relative;
+    margin: 1rem 0 2rem;
+}
+
+.chat-tab .chat-tab-btn p {
+    color: #000000;
+    text-align: center;
+    line-height: 1rem;
+    position: absolute;
+    width: 100%;
+    bottom: -1.5rem;
+    margin: 0;
+}
+
+.chat-tab .chat-tab-btn.active p {
+    color: #0e57fe;
+}
+
+.chat-tab .buji {
+    background: url("../img/buji.png") top center no-repeat;
+    background-size: contain;
+
+}
+
+.chat-tab .juji {
+    background: url("../img/juji.png") top center no-repeat;
+    background-size: contain;
+
+}
+
+.chat-tab .other {
+    background: url("../img/other.png") top center no-repeat;
+    background-size: contain;
+
+}
+
+.chat-tab .buji.active {
+    background: url("../img/buji-active.png") top center no-repeat;
+    background-size: contain;
+
+}
+
+.chat-tab .juji.active {
+    background: url("../img/juji-active.png") top center no-repeat;
+    background-size: contain;
+
+}
+
+.chat-tab .other.active {
+    background: url("../img/other-active.png") top center no-repeat;
+    background-size: contain;
+
+}
+
+.zhusu {
+    background: url("../img/zhusu.jpg") center center no-repeat;
+    background-size: cover;
+}
+
+.tianqi {
+    background: url("../img/tianqiyubao.jpg") center center no-repeat;
+    background-size: cover;
+}
+
+.huoche {
+    background: url("../img/huoche.jpg") center center no-repeat;
+    background-size: cover;
+}
+
+.lunchuan {
+    background: url("../img/lunchuan.jpg") center center no-repeat;
+    background-size: cover;
+}
+
+.feiji {
+    background: url("../img/feiji.jpg") center center no-repeat;
+    background-size: cover;
+}
+
+.qitagongju {
+    background: url("../img/qitajiaotong.jpg") center center no-repeat;
+    background-size: cover;
+}
+
+.shineijiaotong {
+    background: url("../img/shineijiaotong.jpg") center center no-repeat;
+    background-size: cover;
+}
+
+.huoshi {
+    background: url("../img/huoshi.jpg") center center no-repeat;
+    background-size: cover;
+}
+
+.chats-info {
+    color: #ffffff !important;
+    margin: 0.4rem 0.5rem 1rem;
+    border-radius: 1rem;
+}
+
+.chats-info h1 {
+    color: #ffffff !important;
+    font-size: 1.5rem;
+    line-height: 3rem;
+}
+
+.chats-info h1 span {
+    font-size: 1.3rem;
+}
+
+.chats-info .table {
+    padding: 0 2rem;
+
+}
+
+.chats-info .table table tr th, .chats-info .table table tr td {
+    font-size: 1rem;
+    vertical-align: middle;
+    padding: 1rem 0;
+}
+
+.chats-info p {
+    font-size: 0.9rem;
+    padding: 0px 2rem;
+}
+
+.amap-sug-result {
+    border: 0px;
+}
+
+.footer {
+    margin: 2rem 0rem 2rem;
+    padding: 0 2rem;
+    line-height: 1.5rem;
+    font-size: 0.8rem;
+    text-align: center;
+}
+
+.footerli {
+    list-style-type: disc;
+    margin: 1rem 1rem 3rem;
+    line-height: 1.5rem;
+    font-size: 0.7rem;
+    padding-left: 1rem;
+}
+
+/*天气预报*/
+.weathertip {
+    overflow: hidden;
+}
+
+.weathertip .weatherlist {
+    width: 33%;
+    float: left;
+}
+
+.weathertip .weatherlist p {
+    height: 1.5rem;
+    margin: 0;
+    padding: 0 0.3rem;
+    text-align: center;
+}
+
+.top-search a.dash-search-btn {
+    float: right;
+    width: 17%;
+    border-right: none;
+    position: absolute;
+    right: 0.5rem;
+    top: 0rem;
+    height: 3rem;
+    text-align: right;
+    line-height: 3rem;
+    font-size: 1rem;
+    text-align: center;
+}
+.page        {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    overflow: hidden;
+}
+
+/* ANIMATIONS
+============================================================================= */
+
+.page.ng-leave 	{ z-index:9999; }
+.page.ng-enter 	{ z-index:8888; }
+
+/* page specific animations ------------------------ */
+
+/* home -------------------------- */
+.page-home.ng-leave         {
+    -webkit-transform-origin: 0% 0%;
+    -webkit-animation: slideOutLeft 0.5s both ease-in;
+    -moz-transform-origin: 0% 0%;
+    -moz-animation: slideOutLeft 0.5s both ease-in;
+    transform-origin: 0% 0%;
+    animation: slideOutLeft 0.5s both ease-in;
+}
+.page-home.ng-enter 		{
+    -webkit-animation:slideInRight 0.5s both ease-in;
+    -moz-animation:slideInRight 0.5s both ease-in;
+    animation:slideInRight 0.5s both ease-in;
+}
+
+/* about ------------------------ */
+.page-about.ng-leave        {
+    -webkit-animation:slideOutLeft 0.5s both ease-in;
+    -moz-animation:slideOutLeft 0.5s both ease-in;
+    animation:slideOutLeft 0.5s both ease-in;
+}
+.page-about.ng-enter 		{
+    -webkit-animation:slideInRight 0.5s both ease-in;
+    -moz-animation:slideInRight 0.5s both ease-in;
+    animation:slideInRight 0.5s both ease-in;
+}
+
+/* contact ---------------------- */
+.page-contact.ng-leave      {
+    -webkit-transform-origin: 50% 50%;
+    -webkit-animation: slideOutLeft .5s both ease-in;
+    -moz-transform-origin: 50% 50%;
+    -moz-animation: slideOutLeft .5s both ease-in;
+    transform-origin: 50% 50%;
+    animation: slideOutLeft .5s both ease-in;
+}
+.page-contact.ng-enter 		{
+    -webkit-animation:slideInRight 0.5s both ease-in;
+    -moz-animation:slideInRight 0.5s both ease-in;
+    animation:slideInRight 0.5s both ease-in;
+}
+
+/* rotate and fall */
+@-webkit-keyframes rotateFall {
+    0% { -webkit-transform: rotateZ(0deg); }
+    20% { -webkit-transform: rotateZ(10deg); -webkit-animation-timing-function: ease-out; }
+    40% { -webkit-transform: rotateZ(17deg); }
+    60% { -webkit-transform: rotateZ(16deg); }
+    100% { -webkit-transform: translateY(100%) rotateZ(17deg); }
+}
+@-moz-keyframes rotateFall {
+    0% { -moz-transform: rotateZ(0deg); }
+    20% { -moz-transform: rotateZ(10deg); -moz-animation-timing-function: ease-out; }
+    40% { -moz-transform: rotateZ(17deg); }
+    60% { -moz-transform: rotateZ(16deg); }
+    100% { -moz-transform: translateY(100%) rotateZ(17deg); }
+}
+@keyframes rotateFall {
+    0% { transform: rotateZ(0deg); }
+    20% { transform: rotateZ(10deg); animation-timing-function: ease-out; }
+    40% { transform: rotateZ(17deg); }
+    60% { transform: rotateZ(16deg); }
+    100% { transform: translateY(100%) rotateZ(17deg); }
+}
+
+/* scale up */
+@keyframes scaleUp {
+    from 		{ opacity: 0.3; transform: scale(0.8); }
+}
+@-moz-keyframes scaleUp {
+    from 		{ opacity: 0.3; -moz-transform: scale(0.8); }
+}
+@-webkit-keyframes scaleUp {
+    from 		{ opacity: 0.3; -webkit-transform: scale(0.8); }
+}
+
+/* slide in from the right */
+@keyframes slideInRight {
+    from 	{ transform:translateX(100%); }
+    to 		{ transform: translateX(0); }
+}
+@-moz-keyframes slideInRight {
+    from 	{ -moz-transform:translateX(100%); }
+    to 		{ -moz-transform: translateX(0); }
+}
+@-webkit-keyframes slideInRight {
+    from 	{ -webkit-transform:translateX(100%); }
+    to 		{ -webkit-transform: translateX(0); }
+}
+
+/* slide in from the bottom */
+@keyframes slideInUp {
+    from 	{ transform:translateY(100%); }
+    to 		{ transform: translateY(0); }
+}
+@-moz-keyframes slideInUp {
+    from 	{ -moz-transform:translateY(100%); }
+    to 		{ -moz-transform: translateY(0); }
+}
+@-webkit-keyframes slideInUp {
+    from 	{ -webkit-transform:translateY(100%); }
+    to 		{ -webkit-transform: translateY(0); }
+}
+
+/* slide in from the bottom */
+@keyframes slideOutLeft {
+    to 		{ transform: translateX(-100%); }
+}
+@-moz-keyframes slideOutLeft {
+    to 		{ -moz-transform: translateX(-100%); }
+}
+@-webkit-keyframes slideOutLeft {
+    to 		{ -webkit-transform: translateX(-100%); }
+}
+
+/* rotate out newspaper */
+@-webkit-keyframes rotateOutNewspaper {
+    to { -webkit-transform: translateZ(-3000px) rotateZ(360deg); opacity: 0; }
+}
+@-moz-keyframes rotateOutNewspaper {
+    to { -moz-transform: translateZ(-3000px) rotateZ(360deg); opacity: 0; }
+}
+@keyframes rotateOutNewspaper {
+    to { transform: translateZ(-3000px) rotateZ(360deg); opacity: 0; }
+}

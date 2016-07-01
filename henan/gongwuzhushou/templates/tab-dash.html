@@ -1,0 +1,121 @@
+<ion-view>
+
+  <ion-content class="" style="background: #e4e4e4">
+    <div class="top">
+      <h1>中央和国家机关人员差旅费查询</h1>
+      <div class="top-search">
+        <a  ng-click="showmylocal()" class="ion-ios-location-outline">
+          我的位置
+        </a>
+        <div class="search-input ion-ios-search">
+          <input type="text" name="" id="inputLocation" class="inputLocation"  onfocus='this.value=""' ng-model="inputLocation" placeholder="请输入出差目的地"/>
+        </div>
+        <a   class="dash-search-btn" ng-click="jump()">搜索</a>
+
+      </div>
+    </div>
+
+
+    <div class="hot-local info-col">
+      <h1 class="title">热门城市</h1>
+      <ul>
+        <li><a href="#/tab/chats/北京">北京</a></li>
+        <li><a href="#/tab/chats/上海">上海</a></li>
+        <li><a href="#/tab/chats/广州">广州</a></li>
+        <li><a href="#/tab/chats/天津">天津</a></li>
+        <li><a href="#/tab/chats/长沙">长沙</a></li>
+        <li><a href="#/tab/chats/延安">延安</a></li>
+        <li><a href="#/tab/chats/沈阳">沈阳</a></li>
+        <li><a href="#/tab/chats/西安">西安</a></li>
+      </ul>
+    </div>
+    <div class="info-col hot-local-img">
+      <h1 class="title">热门区县推荐</h1>
+      <ul>
+        <li>
+          <a href="#/tab/chats/乌镇">
+          <div class="img-div">
+
+            <img src="./img/mudidi/wuzhen.jpg" alt=""/>
+          </div>
+          <span>乌镇</span></a>
+        </li>
+        <li>
+          <a href="#/tab/chats/井冈山">
+          <div class="img-div">
+
+            <img src="./img/mudidi/jinggangshan.jpg" alt=""/>
+          </div>
+          <span>井冈山</span></a>
+        </li>
+        <li>
+          <a href="#/tab/chats/遵义">
+          <div class="img-div">
+
+            <img src="./img/mudidi/zunyi.jpg" alt=""/>
+          </div>
+          <span>遵义</span></a>
+        </li>
+        <li>
+          <a href="#/tab/chats/瑞金">
+          <div class="img-div">
+
+            <img src="./img/mudidi/ruijin.jpg" alt=""/>
+          </div>
+          <span>瑞金</span></a>
+        </li>
+        <li>
+          <a href="#/tab/chats/白洋淀">
+          <div class="img-div">
+
+            <img src="./img/mudidi/baiyangdian.jpg" alt=""/>
+          </div>
+          <span>白洋淀</span></a>
+        </li>
+        <li>
+          <a href="#/tab/chats/西柏坡">
+          <div class="img-div">
+
+            <img src="./img/mudidi/xibaipo.jpg" alt=""/>
+          </div>
+          <span>西柏坡</span></a>
+        </li>
+        <li>
+          <a href="#/tab/chats/博鳌">
+          <div class="img-div">
+
+            <img src="./img/mudidi/haitangqu.jpg" alt=""/>
+          </div>
+          <span>博鳌</span></a>
+        </li>
+        <li>
+          <a href="#/tab/chats/延庆">
+          <div class="img-div">
+
+            <img src="./img/mudidi/yanqing.jpg" alt=""/>
+          </div>
+          <span>延庆</span></a>
+        </li>
+      </ul>
+    </div>
+    <div class="info-col hot-travel">
+      <h1 class="title">差旅攻略</h1>
+      <ul>
+        <li ng-repeat="t in travel">
+          <a href="{{t.url}}">
+            <h1>{{t.title|limitTo:20}}</h1>
+            <p>{{t.info|limitTo:40}}</p>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="footer">
+      <p style="text-align: center"><img src="./img/er.bmp" alt=""/></p>
+      <p>若您在使用过程中遇到问题 <br/>请致电：010-69001234</p>
+      <p>中央编办域名中心&nbsp;&nbsp;&nbsp;&nbsp;版权所有</p>
+
+    </div>
+
+  </ion-content>
+</ion-view>
